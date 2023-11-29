@@ -26,7 +26,11 @@
 
 ### Initial Discussion
 
+- This program is a pirate-themed version of the classic Battleship game called "Pirates of the Python.".
+
 #### User Goals
+
+-  In this game, the user's goal is to strategically choose coordinates and sink the computer's battleships before the computer sinks user's ships. It's a playful twist on the classic Battleship game.
 
 ## Design
 
