@@ -34,7 +34,8 @@ def display_rules():
 
 def get_player_name():
     """Gets the player's pirate name."""
-
+    return input("Arrr! What be yer pirate name, matey? ")
+    
 def get_grid_size():
     """
     Gets the grid size from the pirate.
