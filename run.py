@@ -20,7 +20,6 @@ def get_user_guess(size, previous_guesses):
     Gets the user's guess for the row and column.
     Returns a tuple containing the user's guess (row, col).
     """
-
     while True:
         try:
             guess_row = int(input(f"Ahoy! Guess Row (1-{size}): ")) - 1
@@ -35,7 +34,7 @@ def get_user_guess(size, previous_guesses):
                     print(f"Avast! Enter valid coordinates (1-{size}).")
         except ValueError:
             print("Avast! Enter valid coordinates (integer values).")
-            
+
 def display_ship(board, ship_row, ship_col):
     """Displays a ship on the game board."""
     board[ship_row][ship_col] = "B"
@@ -57,7 +56,7 @@ def display_rules():
 def get_player_name():
     """Gets the player's pirate name."""
     return input("Arrr! What be yer pirate name, matey? ")
-    
+
 def get_grid_size():
     """
     Gets the grid size from the player.
@@ -72,9 +71,31 @@ def get_grid_size():
                 print("Blimey! Grid size must be between 3 and 8.")
         except ValueError:
             print("Landlubber! Enter a valid integer.")
+
+def show_rules_or_play():
+    """Displays a menu and returns the user's choice."""
+    print("\nWelcome to Pirates of the Python!")
+    print("1. Show Game Rules")
+    print("2. Start the Game")
+    print("3. Quit")
+
+    while True:
+        choice = input("Choose an option (1/2/3): ")
+        if choice in ("1", "2", "3"):
+            return choice
+        else:
+            print("Avast! Please enter '1', '2', or '3'.")
+
 def play_game():
     """Main function to embark on a player adventure."""
-    display_rules()
+    choice = show_rules_or_play()
+
+    if choice == "1":
+        display_rules()
+        return play_game()
+    elif choice == "3":
+        print("Farewell! May fair winds fill yer sails.")
+        return False
 
     pirate_name = get_player_name()
     grid_size = get_grid_size()
