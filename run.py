@@ -41,12 +41,23 @@ def get_grid_size():
     Gets the grid size from the player.
     Returns an integer representing the grid size.
     """
+    while True:
+        try:
+            size = int(input("Avast! Choose the grid size (minimum 3, maximum 8): "))
+            if 3 <= size <= 8:
+                return size
+            else:
+                print("Blimey! Grid size must be between 3 and 8.")
+        except ValueError:
+            print("Landlubber! Enter a valid integer.")
 def play_game():
     """Main function to embark on a player adventure."""
     display_rules()
 
     pirate_name = get_player_name()
-    
+    grid_size = get_grid_size()
+
+    print(f"Ahoy, {pirate_name}! Let's set sail on a treacherous sea with a grid size of {grid_size}x{grid_size}.")
 
 # Call the main function directly
 play_game()
