@@ -48,46 +48,66 @@ Live version of the game can be found here: [Pirates of the Python](https://pira
 
 ## Features
 
-At the start of the game, players are greeted with the "Pirates of the Python" logo set against a pirate-themed background. Below the logo, a menu offers the following options:
-
-1. Start Game
-2. Display Rules
-3. Exit Game
-
 Additionally, players can personalize their experience by choosing a pirate name. They also have the flexibility to set the grid size between 3 and 8 for added customization.
 
 ### Start Screen
 
- ![Start-Screen1]()
- ![Start-Screen2]()
+At the start of the game, players are greeted with the "Pirates of the Python" logo set against a pirate-themed background. Below the logo, a menu offers the following options:
+
+
+1. Display Rules
+2. Start Game
+3. Exit Game
+
+ ![Start-Screen1](README-images/main-screen.png)
 
 ### Display Rules
 
-![Game-Rules]()
+Display Rules when user choose 1.
+
+![Game-Rules](README-images/display-rules.png)
 
 ### Start Game
 
-![Begin-Game]()
+Start Game when user choose 2
 
-### Choosing Row
+![Start-Game](README-images/start-game.png)
 
-![Row-Choice]()
+### Choosing Grid Size
 
-### Choosing Column
+Let user choose Grid size for the game, and show the board.
 
-![Column-Choice]()
+![Grid-Size](README-images/choose-grid-size.png)
 
-### Grids Updated
+![Show-Board](README-images/show-board.png)
 
-![Grid-Update]()
+### Choosing Row & Column
+
+Let user choose column & row and show results on board.
+
+![Row-Column-Choice](README-images/choose-row-colum-&-show-results.png)
+
+### Draw - Attempts used
+
+Result a draw, if user uses all attempts.
+
+![User-Win](README-images/draw.png)
 
 ### User Wins
 
-![User-Win]()
+Result a win, if user hit all computer battleships.
+
+![User-Win](README-images/win.png)
 
 ### Computer Wins
 
+Result a lose, if computer wins.
+
+![User-Win](README-images/lose.png)
+
 #### Future Implementations
+
+I might incorporate a scoring system for the player and potentially allow them to manually choose the positions of their battleships.
 
 ## Technologies Used
 
