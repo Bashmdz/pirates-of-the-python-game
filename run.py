@@ -21,6 +21,17 @@ def get_user_guess(size):
     Returns a tuple containing the user's guess (row, col).
     """
 
+    while True:
+        try:
+            guess_row = int(input(f"Ahoy! Guess Row (1-{size}): ")) - 1
+            guess_col = int(input(f"Guess Col (1-{size}): ")) - 1
+            if 0 <= guess_row < size and 0 <= guess_col < size:
+                return guess_row, guess_col
+            else:
+                print(f"Avast! Enter valid coordinates (1-{size}).")
+        except ValueError:
+            print("Avast! Enter valid coordinates (integer values).")
+            
 def display_ship(board, ship_row, ship_col):
     """Displays a ship on the game board."""
     board[ship_row][ship_col] = "B"
@@ -82,10 +93,28 @@ def play_game():
     player_attempts = 0
     max_attempts = 10
 
+
     while not player_won and not computer_won and player_attempts < max_attempts:
         print("\nPlayer Board:")
         print_board(player_board)
         print(f"Attempts Left - {max_attempts - player_attempts}")
+
+        player_guess_row, player_guess_col = get_user_guess(grid_size)
+
+        hit_ship = any((player_guess_row, player_guess_col) == (ship[0], ship[1]) for ship in computer_ships)
+
+        if hit_ship:
+            print("Arrr, well done! Ye hit the computer's battleship!")
+        else:
+            print("Arrr, ye missed the mark, ye scurvy dog!")
+
+        player_board[player_guess_row][player_guess_col] = "!" if hit_ship else "X"
+
+        # Check if the player won
+        player_won = all(player_board[ship[0]][ship[1]] == "!" for ship in computer_ships)
+
+        if player_won:
+            break
 
     
 # Call the main function directly
