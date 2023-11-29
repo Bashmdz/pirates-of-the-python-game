@@ -80,6 +80,11 @@ def play_game():
     player_attempts = 0
     max_attempts = 10
 
+    while not player_won and not computer_won and player_attempts < max_attempts:
+        print("\nPlayer Board:")
+        print_board(player_board)
+        print(f"Attempts Left - {max_attempts - player_attempts}")
+
     
 # Call the main function directly
 play_game()
