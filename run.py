@@ -69,7 +69,7 @@ def get_grid_size():
         except ValueError:
             print("Landlubber! Enter a valid integer.")
 def play_game():
-    """Main function to embark on a player adventure."""
+    """Main function to embark on a pirate adventure."""
     display_rules()
 
     pirate_name = get_player_name()
@@ -87,12 +87,11 @@ def play_game():
 
     for ship in player_ships:
         display_ship(player_board, ship[0], ship[1])
-    
+
     player_won = False
     computer_won = False
     player_attempts = 0
     max_attempts = 10
-
 
     while not player_won and not computer_won and player_attempts < max_attempts:
         print("\nPlayer Board:")
@@ -112,8 +111,7 @@ def play_game():
 
         # Check if the player won
         player_won = all(player_board[ship[0]][ship[1]] == "!" for ship in computer_ships)
-    
-        
+
         if player_won:
             break
 
@@ -147,13 +145,18 @@ def play_game():
     else:
         print(f"Ye've used all yer attempts, {pirate_name}. It be a draw!")
 
-    play_again = input("Do ye want to set sail again, me heartie? (yes/no): ").lower()
+    while True:
+        play_again = input("Do ye want to set sail again, me heartie? (yes/no): ").lower()
+        if play_again in ("yes", "no"):
+            break
+        else:
+            print("Avast! Please enter 'yes' or 'no'.")
 
     if play_again == "yes":
-        return True
+        return play_game()
     else:
         print(f"Farewell, {pirate_name}! Until our paths cross again on the high seas. Arrr!")
         return False
-        
+
 # Call the main function directly
 play_game()
