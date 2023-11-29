@@ -139,5 +139,21 @@ def play_game():
         # Display computer's board
         print("\nComputer Board:")
         print_board(computer_board)
+
+    if player_won:
+        print(f"Congratulations, {pirate_name}! Ye sunk all the computer's battleships!")
+    elif computer_won:
+        print(f"Shiver me timbers! The computer sunk all yer battleships, {pirate_name}!")
+    else:
+        print(f"Ye've used all yer attempts, {pirate_name}. It be a draw!")
+
+    play_again = input("Do ye want to set sail again, me heartie? (yes/no): ").lower()
+
+    if play_again == "yes":
+        return True
+    else:
+        print(f"Farewell, {pirate_name}! Until our paths cross again on the high seas. Arrr!")
+        return False
+        
 # Call the main function directly
 play_game()
