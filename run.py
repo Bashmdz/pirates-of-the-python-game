@@ -21,6 +21,7 @@ def get_user_guess(size):
 
 def display_ship(board, ship_row, ship_col):
     """Displays a ship on the game board."""
+    board[ship_row][ship_col] = "B"
 
 def display_rules():
     """Displays the pirate game rules."""
@@ -70,6 +71,9 @@ def play_game():
 
     player_ships = [(place_ship(player_board)) for _ in range(num_ships)]
     computer_ships = [(place_ship(computer_board)) for _ in range(num_ships)]
+
+    for ship in player_ships:
+        display_ship(player_board, ship[0], ship[1])
     
 # Call the main function directly
 play_game()
