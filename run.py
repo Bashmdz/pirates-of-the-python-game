@@ -135,5 +135,9 @@ def play_game():
         computer_won = all(computer_board[ship[0]][ship[1]] == "!" for ship in player_ships)
 
         player_attempts += 1
+
+        # Display computer's board
+        print("\nComputer Board:")
+        print_board(computer_board)
 # Call the main function directly
 play_game()
