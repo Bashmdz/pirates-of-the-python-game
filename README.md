@@ -44,9 +44,17 @@
 
 During the user's turn, they will choose a row and a column. The grid will be updated to reflect hits ('!') or misses ('X'). The first to sink all the opponent's battleships wins the game. After the game, the user has the option to play again.
 
+Live version of the game can be found here: [Pirates of the Python](https://pirates-of-the-python-908715cee4da.herokuapp.com/)
+
 ## Features
 
+At the start of the game, players are greeted with the "Pirates of the Python" logo set against a pirate-themed background. Below the logo, a menu offers the following options:
 
+1. Start Game
+2. Display Rules
+3. Exit Game
+
+Additionally, players can personalize their experience by choosing a pirate name. They also have the flexibility to set the grid size between 3 and 8 for added customization.
 
 ### Start Screen
 
