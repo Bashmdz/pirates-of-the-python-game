@@ -15,7 +15,7 @@ def place_ship(board):
     ship_col = random.randint(0, len(board[0]) - 1)
     return ship_row, ship_col
 
-def get_user_guess(size):
+def get_user_guess(size, previous_guesses):
     """
     Gets the user's guess for the row and column.
     Returns a tuple containing the user's guess (row, col).
@@ -25,10 +25,14 @@ def get_user_guess(size):
         try:
             guess_row = int(input(f"Ahoy! Guess Row (1-{size}): ")) - 1
             guess_col = int(input(f"Guess Col (1-{size}): ")) - 1
-            if 0 <= guess_row < size and 0 <= guess_col < size:
+
+            if 0 <= guess_row < size and 0 <= guess_col < size and (guess_row, guess_col) not in previous_guesses:
                 return guess_row, guess_col
             else:
-                print(f"Avast! Enter valid coordinates (1-{size}).")
+                if (guess_row, guess_col) in previous_guesses:
+                    print("Avast! Ye already guessed those coordinates. Choose a new spot!")
+                else:
+                    print(f"Avast! Enter valid coordinates (1-{size}).")
         except ValueError:
             print("Avast! Enter valid coordinates (integer values).")
             
@@ -69,7 +73,7 @@ def get_grid_size():
         except ValueError:
             print("Landlubber! Enter a valid integer.")
 def play_game():
-    """Main function to embark on a pirate adventure."""
+    """Main function to embark on a player adventure."""
     display_rules()
 
     pirate_name = get_player_name()
@@ -92,13 +96,15 @@ def play_game():
     computer_won = False
     player_attempts = 0
     max_attempts = 10
+    previous_player_guesses = set()
 
     while not player_won and not computer_won and player_attempts < max_attempts:
         print("\nPlayer Board:")
         print_board(player_board)
         print(f"Attempts Left - {max_attempts - player_attempts}")
 
-        player_guess_row, player_guess_col = get_user_guess(grid_size)
+        player_guess_row, player_guess_col = get_user_guess(grid_size, previous_player_guesses)
+        previous_player_guesses.add((player_guess_row, player_guess_col))
 
         hit_ship = any((player_guess_row, player_guess_col) == (ship[0], ship[1]) for ship in computer_ships)
 
