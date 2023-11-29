@@ -75,5 +75,11 @@ def play_game():
     for ship in player_ships:
         display_ship(player_board, ship[0], ship[1])
     
+    player_won = False
+    computer_won = False
+    player_attempts = 0
+    max_attempts = 10
+
+    
 # Call the main function directly
 play_game()
