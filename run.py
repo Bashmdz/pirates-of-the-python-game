@@ -113,6 +113,8 @@ def play_game():
         # Check if the player won
         player_won = all(player_board[ship[0]][ship[1]] == "!" for ship in computer_ships)
 
+        player_attempts += 1
+
         if player_won:
             break
 
