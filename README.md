@@ -40,7 +40,13 @@
 
 ## How to Play
 
+"Pirates of the Python" follows the classic gameplay of the game "Battleship." At the main menu, the user can choose to start the game, display rules, or exit the game. Once the game begins, a set of randomly generated ships will be displayed for the user and the computer. The user will also see a blank board for reference.
+
+During the user's turn, they will choose a row and a column. The grid will be updated to reflect hits ('!') or misses ('X'). The first to sink all the opponent's battleships wins the game. After the game, the user has the option to play again.
+
 ## Features
+
+
 
 ### Start Screen
 
