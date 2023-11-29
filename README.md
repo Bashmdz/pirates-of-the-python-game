@@ -113,7 +113,24 @@ I might incorporate a scoring system for the player and potentially allow them t
 
 ### Languages and Python Packages/Libraries Used
 
+- [Python](https://www.python.org/) 
+
+- [Random](https://www.w3schools.com/python/module_random.asp)
+    - Random was used to generate the user's ships and computer ships at the beginning of the game.
+
 ### Frameworks and Programs Used
+
+- #### [GitPod](https://gitpod.io/)
+The entire project was coded using Visual Studio Code.
+
+- #### [GitHub](https://github.com/)
+    - GitHub was used to store the code online and serves as a source for Heroku.
+
+- #### [Heroku](https://dashboard.heroku.com/login)
+    - Heroku was used to deploy the Python Terminal online once it was linked to the Repo.
+
+- #### [Lucidchart](https://www.lucidchart.com/pages/)
+    - Draw.io was used to create the flowchart for "Pirates of the Python."
 
 ## Deployment
 
