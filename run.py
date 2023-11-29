@@ -38,11 +38,15 @@ def get_player_name():
     
 def get_grid_size():
     """
-    Gets the grid size from the pirate.
+    Gets the grid size from the player.
     Returns an integer representing the grid size.
     """
 def play_game():
-    """Main function to embark on a pirate adventure."""
+    """Main function to embark on a player adventure."""
+    display_rules()
+
+    pirate_name = get_player_name()
+    
 
 # Call the main function directly
 play_game()
