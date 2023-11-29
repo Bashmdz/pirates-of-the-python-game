@@ -5,9 +5,13 @@ def print_board(board):
 
 def create_board(size):
     """Creates a new game board of the specified size."""
+    return [["O"] * size for _ in range(size)]
 
 def place_ship(board):
     """Randomly places a ship on the game board."""
+    ship_row = random.randint(0, len(board) - 1)
+    ship_col = random.randint(0, len(board[0]) - 1)
+    return ship_row, ship_col
 
 def get_user_guess(size):
     """
@@ -59,5 +63,13 @@ def play_game():
 
     print(f"Ahoy, {pirate_name}! Let's set sail on a treacherous sea with a grid size of {grid_size}x{grid_size}.")
 
+    player_board = create_board(grid_size)
+    computer_board = create_board(grid_size)
+
+    num_ships = 5 if grid_size >= 6 else 2
+
+    player_ships = [(place_ship(player_board)) for _ in range(num_ships)]
+    computer_ships = [(place_ship(computer_board)) for _ in range(num_ships)]
+    
 # Call the main function directly
 play_game()
