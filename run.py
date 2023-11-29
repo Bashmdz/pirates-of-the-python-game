@@ -112,12 +112,28 @@ def play_game():
 
         # Check if the player won
         player_won = all(player_board[ship[0]][ship[1]] == "!" for ship in computer_ships)
-
-        player_attempts += 1
-
+    
+        
         if player_won:
             break
 
-    
+        # Computer's turn
+        print("\nComputer's Turn:")
+        computer_guess_row = random.randint(0, len(player_board) - 1)
+        computer_guess_col = random.randint(0, len(player_board[0]) - 1)
+
+        hit_ship = any((computer_guess_row, computer_guess_col) == (ship[0], ship[1]) for ship in player_ships)
+
+        if hit_ship:
+            print("Shiver me timbers! The computer hit yer battleship!")
+        else:
+            print("The computer missed! Aye, safe for now!")
+
+        computer_board[computer_guess_row][computer_guess_col] = "!" if hit_ship else "X"
+
+        # Check if the computer won
+        computer_won = all(computer_board[ship[0]][ship[1]] == "!" for ship in player_ships)
+
+        player_attempts += 1
 # Call the main function directly
 play_game()
