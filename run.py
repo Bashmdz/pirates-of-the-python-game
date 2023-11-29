@@ -2,6 +2,8 @@ import random
 
 def print_board(board):
     """Prints the game board."""
+    for row in board:
+        print(" ".join(row))
 
 def create_board(size):
     """Creates a new game board of the specified size."""
