@@ -134,7 +134,25 @@ The entire project was coded using Visual Studio Code.
 
 ## Deployment
 
+To deploy the final build of the project online, Heroku was used. The deployment process involved the following steps:
+
+1. Push the latest code to GitHub.
+2. Go to Heroku.
+3. Create a new app.
+4. Enter the application name and choose Europe for the region.
+5. Search for the Repo.
+6. Connect to the relevant repo you want to deploy.
+7. Go to the settings tab.
+8. Add buildpacks.
+9. Select Python and save changes.
+10. Select Nodejs and save changes.
+11. Ensure that Heroku/Python is at the top of the list, followed by Heroku/Nodejs.
+12. Go to the deploy tab.
+13. Scroll down to Manual Deploy and select deploy branch.
+
 ## Testing
+
+
 
 ### Validation Checks
 
