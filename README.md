@@ -121,7 +121,7 @@ I might incorporate a scoring system for the player and potentially allow them t
 ### Frameworks and Programs Used
 
 - #### [GitPod](https://gitpod.io/)
-The entire project was coded using Visual Studio Code.
+  - The entire project was coded using Visual Studio Code.
 
 - #### [GitHub](https://github.com/)
     - GitHub was used to store the code online and serves as a source for Heroku.
@@ -152,16 +152,26 @@ To deploy the final build of the project online, Heroku was used. The deployment
 
 ## Testing
 
+All of the code within this program was tested using Code Institute's PEP8.
 
-
-### Validation Checks
+![PEP8-Testing](README-images/pep8-test.png)
 
 ## Bugs
 
 ### Resolved Bugs
 
+I addressed a bug in the user choice function where selecting the same coordinates was mistakenly counted as a new attempt. To resolve this, I implemented an error message and prevented users from choosing the same coordinates again.
+
 ### Unresolved Bugs
+
+There are no unresolved bugs.
 
 ## Credits
 
+- [Battleship Youtube Video](https://www.youtube.com/watch?v=alJH_c9t4zw&t=377s)
+
+This tutorial was instrumental in providing insights into crafting the code for the battleship game. It served as a valuable resource, offering guidance and inspiration throughout the development process.
+
 ## Acknowledgements
+
+Grateful to mentor Luke for guidance in mastering Python and game development. Thanks to Code Institute for a supportive learning environment. This experience has profoundly shaped my game creation skills.
