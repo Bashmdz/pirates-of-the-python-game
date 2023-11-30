@@ -1,5 +1,7 @@
 # Pirates of the Python
+![PiratesOfThePython-flowchart](README-images/am-i-responsive.png)
 
+"Pirates of the Python" offers a classic one-player Battleships experience against the computer. Crafting this game was enjoyable and allowed me to explore creative elements in game development.
 ## Contents
 
 * [User Experience (UX)](#user-experience-ux)
